@@ -1,0 +1,85 @@
+<?php
+/**
+ * Copyright © 2016 Mozg. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+
+<div class="box-right">
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4>ClearSale Start</h4>
+        </div>
+        <fieldset>
+            <div id="order_clearsale_block">
+                <div class="order-clearsale-form" id="order_clearsale_form">
+                    <!--<span class="field-row">
+                    &nbsp;
+                    </span>
+                    <div class="divider"></div>-->
+                    <span class="field-row">
+                        <p class="form-buttons">
+                            <button type="button" class="scalable success" onclick="clearsale_start_analisar()" style=""><span><span><span>Analisar</span></span></span></button>
+                        </p>
+                    </span>
+                    <div class="divider"></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<?php
+
+$params = $this->getRequest()->getParams();
+$order_id = $params['order_id'];
+
+$url_clearsale_start_analisar = Mage::helper('adminhtml')->getUrl('adminhtml/Clearsale/clearsale_start_analisar/', array('order_id'=>$order_id));
+
+/*
+echo "<a href='$url_analisar'>$url_analisar</a>";
+*/
+?>
+
+<script type="text/javascript">
+//<![CDATA[
+
+    url_clearsale_start_analisar = '<?php echo $url_clearsale_start_analisar; ?>';
+
+    function http_request(){
+
+        new Ajax.Request( url, {
+            method: 'get',
+            asynchronous: false,
+            parameters: '',
+            onLoading: function(transport) {
+                console.log(arguments.callee.name);
+            },
+            onCreate: function(transport) {
+                console.log(arguments.callee.name);
+            },
+            onComplete: function(transport) {
+                console.log(arguments.callee.name);
+
+                $('ajax-result').innerHTML = '01';
+            }
+        });
+
+    }
+
+    function clearsale_start_analisar(){
+        if (confirm("Confirma a ação para a análise do registro!") == true) {
+            url = url_clearsale_start_analisar;
+            console.log(url);
+            openPopupsMozg(url, 'WinXilinus', 'Link', 'Clearsale', 'clearsale');
+            //http_request();
+        }
+    }
+
+//]]>
+</script>
+
+<div class="clear"></div>
+
+<?php echo $this->getChildHtml(); ?>

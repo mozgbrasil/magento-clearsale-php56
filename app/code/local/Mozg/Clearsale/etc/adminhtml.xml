@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Mozg. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <mozg_anti_fraud translate="title">
+                                        <title>Anti-Fraud Methods</title>
+                                    </mozg_anti_fraud>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <mozg_base>
+                        <children>
+                            <mozg_anti_fraud>
+                                <title>Anti-Fraud Methods</title>
+                                <sort_order>50</sort_order>
+                            </mozg_anti_fraud>
+                        </children>
+                    </mozg_base>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <mozg_base>
+            <children>
+                <mozg_anti_fraud>
+                    <title>Anti-Fraud Methods</title>
+                    <action>adminhtml/system_config/edit/section/mozg_anti_fraud</action>
+                    <sort_order>50</sort_order>
+                </mozg_anti_fraud>
+            </children>
+        </mozg_base>
+    </menu>
+</config>

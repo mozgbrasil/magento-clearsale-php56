@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Mozg. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config>
+    <!--<tabs>
+        <mozg translate="label" module="mozg_base">
+            <label>MOZG</label>
+            <sort_order>2000</sort_order>
+        </mozg>
+    </tabs>-->
+    <sections>
+        <mozg_anti_fraud translate="label">
+            <header_css>header-section-mozg_general</header_css>
+            <class>separator-top section-mozg_general</class>
+            <label>Anti-Fraud Methods</label>
+            <tab>mozg</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <clearsale_abstract translate="label" module="mozg_clearsale"> 
+                    <label><![CDATA[ClearSale - Configurações Padrão]]></label>
+                    <sort_order>620</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>
+                    </comment>                  
+                    <fields>                    
+                        <license translate="label">
+                            <label>Licença para uso comercial</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56#-nome-da-acao" target="_blank">__?__</a>]]></comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>18</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </license>
+                        <license_output translate="label">
+                            <label></label>
+                            <comment></comment>
+                            <license_config_path>mozg_anti_fraud/clearsale_abstract/license</license_config_path>
+                            <method_id>mozg_clearsale</method_id>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>mozg_base/adminhtml_system_config_form_field_license</frontend_model>
+                            <sort_order>19</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </license_output>
+                     </fields>
+                </clearsale_abstract>
+                <clearsale_total translate="label" module="mozg_clearsale"> 
+                    <label><![CDATA[Total ClearSale, Total Guaranted & Application - (powered by MOZG)]]></label>
+                    <sort_order>620</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <frontend_model>mozg_base/adminhtml_system_config_fieldset_method</frontend_model>
+                    <activity_path>mozg_anti_fraud/clearsale_total/active</activity_path>
+                    <comment>
+                          <![CDATA[<div style="padding:10px;background-color:#fff;border:1px solid #ddd;margin-bottom:7px;"><p><a href="https://github.com/mozgbrasil/magento-clearsale-php56#mozgclearsale" target="_blank">Clique aqui</a> para obter as informações do módulo</p></div>]]>
+                    </comment>                  
+                    <fields>                    
+                        <active translate="label,comment">
+                            <label>Enabled</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56/blob/master/README_ClearsaleTotal.md#-ativar" target="_blank">__?__</a>]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                        <demo_mode translate="label,comment">
+                            <label>Test/Production Mode</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56/blob/master/README_ClearsaleTotal.md#-modo-testeprodu%C3%A7%C3%A3o" target="_blank">__?__</a>]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mozg_clearsale/system_config_source_DemoModes</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </demo_mode>
+                        <entitycode_test translate="label">
+                            <label>Entity code Test</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56/blob/master/README_ClearsaleTotal.md#-entity-code---ambiente-de-teste" target="_blank">__?__</a>]]></comment>
+                            <frontend_type>obscure</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </entitycode_test>
+                        <entitycode_live translate="label">
+                            <label>Entity code Live</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56/blob/master/README_ClearsaleTotal.md#-entity-code---ambiente-de-produ%C3%A7%C3%A3o" target="_blank">__?__</a>]]></comment>
+                            <frontend_type>obscure</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </entitycode_live>
+                        <type_ecommerce translate="label">
+                            <label>Type ecommerce</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56/blob/master/README_ClearsaleTotal.md#-tipo-do-e-commerce" target="_blank">__?__</a>]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mozg_clearsale/system_config_source_typeEcommerce</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </type_ecommerce>
+                        <serialized translate="label">
+                            <label>Relationship payments</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56/blob/master/README_ClearsaleTotal.md#-relacionamento-de-pagamentos" target="_blank">__?__</a>]]></comment>
+                            <frontend_model>mozg_clearsale/adminhtml_system_config_form_field_relationshipclearsale</frontend_model>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </serialized>
+                        <mozg_clearsale_total_group_1 type="group" module="mozg_clearsale" translate="label">
+                            <label>Captura de Device</label>
+                            <expanded>1</expanded>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>100</sort_order>
+                            <fields>
+                                <action_name translate="label">
+                                    <config_path>mozg_anti_fraud/clearsale_total/action_name</config_path>
+                                    <label>Action Name</label>
+                                    <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56/blob/master/README_ClearsaleTotal.md#-nome-da-a%C3%A7%C3%A3o" target="_blank">__?__</a>]]></comment>
+                                    <frontend_type>text</frontend_type>
+                                    <sort_order>30</sort_order>
+                                    <show_in_default>1</show_in_default>
+                                    <show_in_website>1</show_in_website>
+                                    <show_in_store>1</show_in_store>
+                                </action_name>
+                                <block_name translate="label">
+                                    <config_path>mozg_anti_fraud/clearsale_total/block_name</config_path>
+                                    <label>Block Name</label>
+                                    <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56/blob/master/README_ClearsaleTotal.md#-nome-da-a%C3%A7%C3%A3o" target="_blank">__?__</a>]]></comment>
+                                    <frontend_type>text</frontend_type>
+                                    <sort_order>40</sort_order>
+                                    <show_in_default>1</show_in_default>
+                                    <show_in_website>1</show_in_website>
+                                    <show_in_store>1</show_in_store>
+                                </block_name>
+                                <fingeprint_app translate="label">
+                                    <config_path>mozg_anti_fraud/clearsale_total/fingeprint_app</config_path>
+                                    <label>FingerPrint App</label>
+                                    <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56/blob/master/README_ClearsaleTotal.md#-fingerprint-app" target="_blank">__?__</a>]]></comment>
+                                    <frontend_type>text</frontend_type>
+                                    <sort_order>70</sort_order>
+                                    <show_in_default>1</show_in_default>
+                                    <show_in_website>1</show_in_website>
+                                    <show_in_store>1</show_in_store>
+                                </fingeprint_app>
+                            </fields>
+                        </mozg_clearsale_total_group_1>
+                     </fields>
+                </clearsale_total>
+                <clearsale_start translate="label" module="mozg_clearsale"> 
+                    <label><![CDATA[ClearSale Start - (powered by MOZG)]]></label>
+                    <sort_order>720</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <frontend_model>mozg_base/adminhtml_system_config_fieldset_method</frontend_model>
+                    <activity_path>mozg_anti_fraud/clearsale_start/active</activity_path>
+                    <comment>
+                          <![CDATA[<div style="padding:10px;background-color:#fff;border:1px solid #ddd;margin-bottom:7px;"><p><a href="https://github.com/mozgbrasil/magento-clearsale-php56#mozgclearsale" target="_blank">Clique aqui</a> para obter as informações do módulo</p></div>]]>
+                    </comment>                  
+                    <fields>                    
+                        <active translate="label,comment">
+                            <label>Enabled</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56/blob/master/README.md#-ativar" target="_blank">__?__</a>]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                        <demo_mode translate="label,comment">
+                            <label>Test/Production Mode</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56#-modo-testeprodução" target="_blank">__?__</a>]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mozg_clearsale/system_config_source_DemoModes</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </demo_mode>
+                        <entitycode_test translate="label">
+                            <label>Entity code Test</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56#-entity-code-test" target="_blank">__?__</a>]]></comment>
+                            <frontend_type>obscure</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </entitycode_test>
+                        <entitycode_live translate="label">
+                            <label>Entity code Live</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56#-entity-code" target="_blank">__?__</a>]]></comment>
+                            <frontend_type>obscure</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </entitycode_live>
+                        <serialized translate="label">
+                            <label>Relationship payments</label>
+                            <comment><![CDATA[<a href="https://github.com/mozgbrasil/magento-clearsale-php56#-entity-code" target="_blank">__?__</a>]]></comment>
+                            <frontend_model>mozg_clearsale/adminhtml_system_config_form_field_relationshipclearsale</frontend_model>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </serialized>
+                     </fields>
+                </clearsale_start>
+            </groups>
+        </mozg_anti_fraud>
+    </sections>
+</config>

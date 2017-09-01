@@ -1,0 +1,106 @@
+<?php
+/**
+ * Copyright © 2016 Mozg. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+
+<div class="box-right">
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4>Total ClearSale, Total Guaranted & Application</h4>
+        </div>
+        <fieldset>
+            <div id="order_clearsale_block">
+                <div class="order-clearsale-form" id="order_clearsale_form">
+                    <!--<span class="field-row">
+                    &nbsp;
+                    </span>
+                    <div class="divider"></div>-->
+                    <span class="field-row">
+                        <p class="form-buttons">
+                            <button type="button" class="scalable success" onclick="clearsale_total_analisar()" style=""><span><span><span>Analisar</span></span></span></button>
+                            <button type="button" class="scalable " onclick="clearsale_total_reanalisar()" style=""><span><span><span>Reanalisar</span></span></span></button>
+                            <button type="button" class="scalable back" onclick="clearsale_total_status()" style=""><span><span><span>Status</span></span></span></button>
+                        </p>
+                    </span>
+                    <div class="divider"></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<?php
+
+$params = $this->getRequest()->getParams();
+$order_id = $params['order_id'];
+
+$url_clearsale_total_analisar = Mage::helper('adminhtml')->getUrl('adminhtml/Clearsale/clearsale_total_analisar/', array('order_id'=>$order_id));
+$url_clearsale_total_reanalisar = Mage::helper('adminhtml')->getUrl('adminhtml/Clearsale/clearsale_total_analisar/', array('order_id'=>$order_id,'reanalise'=>'true'));
+$url_clearsale_total_status = Mage::helper('adminhtml')->getUrl('adminhtml/Clearsale/clearsale_total_status/', array('order_id'=>$order_id,));
+
+/*
+echo "<a href='$url_analisar'>$url_analisar</a>";
+*/
+?>
+
+<script type="text/javascript">
+//<![CDATA[
+
+    url_clearsale_total_analisar = '<?php echo $url_clearsale_total_analisar; ?>';
+    url_clearsale_total_reanalisar = '<?php echo $url_clearsale_total_reanalisar; ?>';
+    url_clearsale_total_status = '<?php echo $url_clearsale_total_status; ?>';
+
+    function http_request(){
+
+        new Ajax.Request( url, {
+            method: 'get',
+            asynchronous: false,
+            parameters: '',
+            onLoading: function(transport) {
+                console.log(arguments.callee.name);
+            },
+            onCreate: function(transport) {
+                console.log(arguments.callee.name);
+            },
+            onComplete: function(transport) {
+                console.log(arguments.callee.name);
+
+                $('ajax-result').innerHTML = '01';
+            }
+        });
+
+    }
+
+    function clearsale_total_analisar(){
+        if (confirm("Confirma a ação para a análise do registro!") == true) {
+            url = url_clearsale_total_analisar;
+            console.log(url);
+            openPopupsMozg(url, 'WinXilinus', 'Link', 'Clearsale', 'clearsale');
+            //http_request();
+        }
+    }
+
+    function clearsale_total_reanalisar(){
+        if (confirm("Confirma a ação para a reanálise do registro!") == true) {
+            url = url_clearsale_total_reanalisar;
+            console.log(url);
+            openPopupsMozg(url, 'WinXilinus', 'Link', 'Clearsale', 'clearsale');
+            //http_request();
+        }
+    }
+
+    function clearsale_total_status(){
+        url = url_clearsale_total_status;
+        console.log(url);
+        openPopupsMozg(url, 'WinXilinus', 'Link', 'Clearsale', 'clearsale');
+    }
+
+//]]>
+</script>
+
+<div class="clear"></div>
+
+<?php echo $this->getChildHtml(); ?>

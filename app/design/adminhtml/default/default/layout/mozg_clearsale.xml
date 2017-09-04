@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Mozg. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<layout>
+
+    <adminhtml_sales_order_view>
+        <reference name="order_info">
+            <block type="mozg_clearsale/adminhtml_sales_order_view_info" name="mozg_xml_include_clearsale_total_order_info" template="mozg_clearsale/sales/order/view/info_clearsale_total.phtml" />
+        </reference>
+    </adminhtml_sales_order_view>
+
+    <adminhtml_sales_order_view>
+        <reference name="order_info">
+            <block type="mozg_clearsale/adminhtml_sales_order_view_info" name="mozg_xml_include_clearsale_start_order_info" template="mozg_clearsale/sales/order/view/info_clearsale_start.phtml" />
+        </reference>
+    </adminhtml_sales_order_view>
+
+</layout>

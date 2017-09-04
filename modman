@@ -1,0 +1,12 @@
+## Modman Module Mozg
+app/code/local/Mozg/Clearsale/	app/code/local/Mozg/Clearsale/
+app/design/adminhtml/default/default/layout/mozg_clearsale.xml	app/design/adminhtml/default/default/layout/mozg_clearsale.xml
+app/design/adminhtml/default/default/template/mozg_clearsale/	app/design/adminhtml/default/default/template/mozg_clearsale/
+app/design/frontend/base/default/layout/mozg_clearsale.xml	app/design/frontend/base/default/layout/mozg_clearsale.xml
+app/design/frontend/base/default/template/mozg_clearsale/	app/design/frontend/base/default/template/mozg_clearsale/
+app/etc/modules/Mozg_Clearsale.xml	app/etc/modules/Mozg_Clearsale.xml
+app/locale/pt_BR/Mozg_Clearsale.csv	app/locale/pt_BR/Mozg_Clearsale.csv
+js/mozg_clearsale/	js/mozg_clearsale/
+skin/adminhtml/default/default/images/mozg_clearsale/	skin/adminhtml/default/default/images/mozg_clearsale/
+skin/frontend/base/default/css/mozg_clearsale/	skin/frontend/base/default/css/mozg_clearsale/
+skin/frontend/base/default/images/mozg_clearsale/	skin/frontend/base/default/images/mozg_clearsale/
